@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mycode="clr-namespace:Notes"
              x:Class="Notes.MainPage">
-			 
-   
- 
+
+
+    <VerticalStackLayout Margin="30, 60, 30, 30">
+        <Label Text="Notes" HorizontalOptions="Center" FontAttributes="Bold" FontSize="{mycode:GlobalFontSize}"></Label>
+        <Editor Placeholder="Enter a note" HeightRequest="100" x:Name="editor"></Editor>
+        <Grid ColumnDefinitions="Auto, 30, Auto">
+            <Button Grid.Column="0" Text="Save" WidthRequest="100" Clicked="OnSaveButtonClicked"></Button>
+            <Button Grid.Column="2" Text="Delete" WidthRequest="100" Clicked="OnDeleteButtonClicked"></Button>
+        </Grid>
+    </VerticalStackLayout>
 </ContentPage>
